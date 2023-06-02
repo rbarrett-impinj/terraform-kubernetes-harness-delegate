@@ -6,6 +6,7 @@ resource "helm_release" "delegate" {
   create_namespace = true
 
   values = [data.utils_deep_merge_yaml.values.output]
+  timeout          = 600
 }
 
 locals {
